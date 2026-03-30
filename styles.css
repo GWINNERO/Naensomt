@@ -1006,5 +1006,5 @@ body {
   height: 26px;   /* FIXED size = stable */
   width: auto;
   display: block;
-  margin-top: 6px;  /* moves it DOWN properly */
+  margin-top: 4px;  /* moves it DOWN properly */
 }
