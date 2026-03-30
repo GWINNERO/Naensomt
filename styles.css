@@ -1007,5 +1007,5 @@ body {
   height: clamp(20px, 3vw, 36px);
   width: auto;
   object-fit: contain;
-  transform: translateY(-5px);
+  transform: translateY(5px);
 }
