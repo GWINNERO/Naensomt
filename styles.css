@@ -1004,7 +1004,7 @@ body {
 }
 .nav-logo-image {
   display: block;
-  height: 42px;
+  height: 20px;
   width: auto;
   object-fit: contain;
 }
