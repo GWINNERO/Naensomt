@@ -996,17 +996,9 @@ body {
 /* =========================================================
    LOGO
    ========================================================= */
-.nav-logo {
-  flex-shrink: 0;
-  margin-right: auto;
-  display: flex;
-  align-items: center;
-  height: 20px;
-}
-
 .nav-logo-image {
   display: block;
-  height: 100px;
+  height: 80px;
   width: auto;
   max-width: none;
   object-fit: contain;
