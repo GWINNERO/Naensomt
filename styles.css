@@ -248,15 +248,6 @@ body {
   align-items: center;
   gap: var(--sp-8);
 }
-.nav-logo {
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: var(--bark);
-  flex-shrink: 0;
-  margin-right: auto;
-}
 .nav-links {
   display: flex;
   gap: var(--sp-8);
@@ -1002,9 +993,21 @@ body {
 @media (forced-colors: active) {
   .btn--primary, .btn--ghost, .btn--nav { border: 2px solid ButtonText; }
 }
+/* =========================================================
+   LOGO
+   ========================================================= */
+.nav-logo {
+  flex-shrink: 0;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  height: 48px;
+}
+
 .nav-logo-image {
   display: block;
-  height: 100px;
+  height: 32px;
   width: auto;
+  max-width: none;
   object-fit: contain;
 }
