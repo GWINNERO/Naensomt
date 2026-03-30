@@ -1001,11 +1001,10 @@ body {
   align-items: center;
   height: 100%;
   margin-right: auto;
-  flex-shrink: 0;
 }
 .nav-logo-image {
-  height: clamp(20px, 3vw, 36px);
+  height: 26px;   /* FIXED size = stable */
   width: auto;
-  object-fit: contain;
-  transform: translateY(5px);
+  display: block;
+  margin-top: 6px;  /* moves it DOWN properly */
 }
