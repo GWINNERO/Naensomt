@@ -1001,12 +1001,12 @@ body {
   margin-right: auto;
   display: flex;
   align-items: center;
-  height: 148px;
+  height: 120px;
 }
 
 .nav-logo-image {
   display: block;
-  height: 132px;
+  height: 100px;
   width: auto;
   max-width: none;
   object-fit: contain;
