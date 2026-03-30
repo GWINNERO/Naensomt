@@ -996,11 +996,16 @@ body {
 /* =========================================================
    LOGO
    ========================================================= */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-right: auto;
+  flex-shrink: 0;
+}
 .nav-logo-image {
-  display: block;
-  height: 42px;
+  height: clamp(20px, 3vw, 36px);
   width: auto;
-  max-width: 100%;
   object-fit: contain;
   transform: translateY(-5px);
 }
