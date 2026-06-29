@@ -10,7 +10,9 @@
  *   6. Contact form client-side validation
  *   7. Footer year update
  */
+
 'use strict';
+
 /* ─────────────────────────────────────────────
    1. SMOOTH SCROLL
    All internal <a href="#..."> links.
@@ -20,30 +22,39 @@
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
       if (!targetId || targetId === '#') return;
+
       const target = document.querySelector(targetId);
       if (!target) return;
+
       e.preventDefault();
+
       // Close mobile menu if open
       closeMobileMenu();
+
       const navHeight = parseInt(
         getComputedStyle(document.documentElement)
           .getPropertyValue('--nav-h')
           .trim()
       ) || 72;
+
       const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+
       window.scrollTo({ top: top, behavior: 'smooth' });
+
       // Move focus to target for accessibility
       target.setAttribute('tabindex', '-1');
       target.focus({ preventScroll: true });
     });
   });
 })();
+
 /* ─────────────────────────────────────────────
    2. STICKY HEADER SHADOW
 ───────────────────────────────────────────── */
 (function initHeaderScroll() {
   var header = document.querySelector('.site-header');
   if (!header) return;
+
   function updateHeader() {
     if (window.scrollY > 8) {
       header.classList.add('scrolled');
@@ -51,13 +62,16 @@
       header.classList.remove('scrolled');
     }
   }
+
   window.addEventListener('scroll', updateHeader, { passive: true });
   updateHeader(); // run on load
 })();
+
 /* ─────────────────────────────────────────────
    3. MOBILE NAV TOGGLE
 ───────────────────────────────────────────── */
 var mobileMenuOpen = false;
+
 function closeMobileMenu() {
   var toggle = document.getElementById('navToggle');
   var menu   = document.getElementById('navMenu');
@@ -67,16 +81,19 @@ function closeMobileMenu() {
   toggle.setAttribute('aria-label', 'Open menu');
   menu.classList.remove('is-open');
 }
+
 (function initMobileNav() {
   var toggle = document.getElementById('navToggle');
   var menu   = document.getElementById('navMenu');
   if (!toggle || !menu) return;
+
   toggle.addEventListener('click', function () {
     mobileMenuOpen = !mobileMenuOpen;
     toggle.setAttribute('aria-expanded', String(mobileMenuOpen));
     toggle.setAttribute('aria-label', mobileMenuOpen ? 'Close menu' : 'Open menu');
     menu.classList.toggle('is-open', mobileMenuOpen);
   });
+
   // Close on Escape
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && mobileMenuOpen) {
@@ -84,6 +101,7 @@ function closeMobileMenu() {
       toggle.focus();
     }
   });
+
   // Close when clicking outside nav
   document.addEventListener('click', function (e) {
     if (mobileMenuOpen && !e.target.closest('.nav-inner')) {
@@ -91,17 +109,21 @@ function closeMobileMenu() {
     }
   });
 })();
+
 /* ─────────────────────────────────────────────
    4. PRODUCT ACCORDION (Learn more)
 ───────────────────────────────────────────── */
 (function initAccordions() {
   var toggles = document.querySelectorAll('.accordion-toggle');
+
   toggles.forEach(function (toggle) {
     var bodyId = toggle.getAttribute('aria-controls');
     var body   = bodyId ? document.getElementById(bodyId) : null;
     if (!body) return;
+
     toggle.addEventListener('click', function () {
       var isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
       // Collapse all others in the same parent context (optional: isolate per card)
       toggles.forEach(function (otherToggle) {
         if (otherToggle !== toggle) {
@@ -114,6 +136,7 @@ function closeMobileMenu() {
           }
         }
       });
+
       // Toggle this one
       if (isExpanded) {
         toggle.setAttribute('aria-expanded', 'false');
@@ -130,6 +153,7 @@ function closeMobileMenu() {
     });
   });
 })();
+
 /* ─────────────────────────────────────────────
    5. SCROLL REVEAL (IntersectionObserver)
 ───────────────────────────────────────────── */
@@ -143,6 +167,7 @@ function closeMobileMenu() {
     });
     return;
   }
+
   if (!('IntersectionObserver' in window)) {
     // Fallback: show everything
     document.querySelectorAll('.reveal').forEach(function (el) {
@@ -150,6 +175,7 @@ function closeMobileMenu() {
     });
     return;
   }
+
   var observer = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
@@ -164,21 +190,25 @@ function closeMobileMenu() {
       rootMargin: '0px 0px -40px 0px'
     }
   );
+
   // Add staggered delay to product cards and ecology cards
   var staggeredGroups = [
     { selector: '.product-card', delay: 80 },
     { selector: '.ecology-card', delay: 80 },
     { selector: '.timeline-step', delay: 100 }
   ];
+
   staggeredGroups.forEach(function (group) {
     document.querySelectorAll(group.selector).forEach(function (el, i) {
       el.style.transitionDelay = (i * group.delay) + 'ms';
     });
   });
+
   document.querySelectorAll('.reveal').forEach(function (el) {
     observer.observe(el);
   });
 })();
+
 /* ─────────────────────────────────────────────
    6. CONTACT FORM — CLIENT-SIDE VALIDATION
 ───────────────────────────────────────────── */
@@ -186,6 +216,7 @@ function closeMobileMenu() {
   var form    = document.getElementById('contactForm');
   var success = document.getElementById('formSuccess');
   if (!form || !success) return;
+
   /**
    * Returns an error string or '' if valid.
    */
@@ -202,15 +233,18 @@ function closeMobileMenu() {
     }
     return '';
   }
+
   function showError(field, msg) {
     var errorEl = document.getElementById(field.id + '-error');
     field.classList.toggle('is-invalid', !!msg);
     field.setAttribute('aria-invalid', msg ? 'true' : 'false');
     if (errorEl) errorEl.textContent = msg;
   }
+
   function clearError(field) {
     showError(field, '');
   }
+
   // Live validation on blur
   form.querySelectorAll('input, textarea').forEach(function (field) {
     field.addEventListener('blur', function () {
@@ -223,32 +257,40 @@ function closeMobileMenu() {
       }
     });
   });
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+
     var fields  = Array.from(form.querySelectorAll('input, textarea'));
     var isValid = true;
+
     fields.forEach(function (field) {
       var msg = validateField(field);
       showError(field, msg);
       if (msg) isValid = false;
     });
+
     if (!isValid) {
       // Focus first invalid field
       var firstInvalid = form.querySelector('.is-invalid');
       if (firstInvalid) firstInvalid.focus();
       return;
     }
+
     // All good — show success message (no server submit)
     form.querySelectorAll('input, textarea').forEach(function (f) {
       f.value = '';
       clearError(f);
     });
+
     success.hidden = false;
     requestAnimationFrame(function () {
       success.classList.add('is-visible');
     });
+
     // Scroll to success
     success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
     // Hide success after 6 seconds
     setTimeout(function () {
       success.classList.remove('is-visible');
@@ -258,6 +300,7 @@ function closeMobileMenu() {
     }, 6000);
   });
 })();
+
 /* ─────────────────────────────────────────────
    7. FOOTER YEAR
 ───────────────────────────────────────────── */

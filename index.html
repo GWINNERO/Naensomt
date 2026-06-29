@@ -8,30 +8,50 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <!-- ===== HEADER / NAV ===== -->
   <header class="site-header" id="top" role="banner">
     <nav class="nav-inner" aria-label="Main navigation">
-      <a href="#top" class="nav-logo" aria-label="Nænsomt – back to top">
-        <img src="images/logo_navn_2.PNG" alt="Nænsomt logo" class="nav-logo-image">
-      </a>
+      <a href="#top" class="nav-logo" aria-label="Nænsomt – back to top">Nænsomt</a>
+
       <!-- Hamburger toggle (mobile) -->
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
       </button>
+
       <ul class="nav-links" id="navMenu" role="list">
         <li><a href="#products" class="nav-link">Products</a></li>
         <li><a href="#culture" class="nav-link">Culture</a></li>
         <li><a href="#ecology" class="nav-link">Ecology &amp; Fairtrade</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
+
       <a href="#products" class="btn btn--nav" aria-label="Shop – scroll to products">Shop</a>
     </nav>
   </header>
+
   <main id="main-content">
+
     <!-- ===== HERO ===== -->
     <section class="hero" aria-labelledby="hero-headline">
+      <!--
+        ╔══════════════════════════════════════════════════════════════╗
+        ║  HERO BACKGROUND IMAGE                                       ║
+        ║  Replace the src below with the path to your own PNG.        ║
+        ║  The image scales to ANY screen resolution and viewport size ║
+        ║  via CSS (object-fit: cover + 100vw/100vh).                  ║
+        ╚══════════════════════════════════════════════════════════════╝
+      -->
+      <img
+        class="hero-bg-image"
+        src="INSERT_BACKGROUND_PICTURE_FILE_HERE"
+        alt=""
+        aria-hidden="true"
+        onerror="this.style.display='none'"
+      />
+
       <div class="hero-texture" aria-hidden="true"></div>
       <div class="hero-botanical" aria-hidden="true">
         <!-- Botanical leaf SVG silhouettes, purely decorative -->
@@ -53,6 +73,7 @@
           <line x1="50" y1="180" x2="50" y2="8" stroke="var(--leaf-vein)" stroke-width="1.1"/>
         </svg>
       </div>
+
       <div class="hero-content reveal">
         <span class="hero-eyebrow">Carefully Crafted · Naturally Sourced</span>
         <h1 id="hero-headline" class="hero-headline">
@@ -66,11 +87,13 @@
           <a href="#culture" class="btn btn--ghost">Our Philosophy</a>
         </div>
       </div>
+
       <!-- Scroll indicator -->
       <div class="scroll-indicator" aria-hidden="true">
         <span class="scroll-line"></span>
       </div>
     </section>
+
     <!-- ===== PRODUCTS ===== -->
     <section class="products" id="products" aria-labelledby="products-heading">
       <div class="section-inner">
@@ -79,45 +102,53 @@
           <h2 id="products-heading" class="section-title">Four teas.<br/>Infinite calm.</h2>
           <p class="section-sub">Every bottle begins with a question: <em>does this honour the plant?</em></p>
         </header>
+
         <div class="product-grid" role="list">
+
           <!-- ── Product 1: Deep Red Hibiscus Rose ── -->
           <article class="product-card product-card--red reveal" role="listitem" aria-label="Deep Red Hibiscus Rose Iced Tea">
             <div class="product-visual" aria-hidden="true">
-              <!-- CSS/SVG bottle illustration – deep ruby red -->
-              <svg class="bottle-svg" viewBox="0 0 100 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                <!-- Bottle cap -->
+              <!--
+                BEVERAGE 1 PICTURE — replace src below with your own image path.
+                The image scales responsively inside the card (object-fit: contain).
+                If the file is missing, the SVG bottle illustration is shown as a fallback.
+              -->
+              <img
+                class="product-img"
+                src="INSERT_BEVERAGE_ONE_PICTURE_FILE_HERE"
+                alt="Deep Red Hibiscus Rose Iced Tea bottle"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+              />
+              <!-- CSS/SVG bottle illustration – deep ruby red (fallback) -->
+              <svg class="bottle-svg bottle-svg--fallback" viewBox="0 0 100 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <rect x="38" y="0" width="24" height="10" rx="3" fill="var(--cap-dark)"/>
-                <!-- Bottle neck -->
                 <path d="M38 10 Q35 20 32 35 L68 35 Q65 20 62 10Z" fill="var(--bottle-body)"/>
-                <!-- Bottle body -->
                 <path d="M28 38 Q22 60 22 100 L22 180 Q22 200 50 200 Q78 200 78 180 L78 100 Q78 60 72 38Z" fill="var(--bottle-body)"/>
-                <!-- Liquid fill (deep ruby) -->
                 <clipPath id="clip-red">
                   <path d="M28 38 Q22 60 22 100 L22 180 Q22 200 50 200 Q78 200 78 180 L78 100 Q78 60 72 38Z"/>
                 </clipPath>
                 <rect x="0" y="55" width="100" height="155" fill="var(--tea-red)" clip-path="url(#clip-red)" opacity="0.92"/>
-                <!-- Highlight -->
                 <path d="M34 55 Q32 80 32 110" stroke="var(--bottle-highlight)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.5"/>
-                <!-- Hibiscus flower floating -->
                 <g transform="translate(50,130)" opacity="0.7">
                   <path d="M0-10 C3-6 8-3 10 0 C8 3 3 6 0 10 C-3 6-8 3-10 0 C-8-3-3-6 0-10Z" fill="var(--petal-red)"/>
                   <path d="M-7-7 C-4-9 0-10 3-7 C1-3 0 0-3 3 C-6 1-8-2-7-7Z" fill="var(--petal-red)" opacity="0.6"/>
                   <circle cx="0" cy="0" r="3" fill="var(--petal-center)"/>
                 </g>
-                <!-- Label area -->
                 <rect x="28" y="90" width="44" height="55" rx="4" fill="var(--label-bg)" opacity="0.18"/>
               </svg>
             </div>
+
             <div class="product-info">
-              <h3 class="product-name">Red Hibiscus Iced Teae</h3>
+              <h3 class="product-name">Deep Red Hibiscus Rose</h3>
               <span class="product-badge product-badge--red">Deep Red</span>
               <ul class="ingredient-list" aria-label="Ingredients">
-                <li>Mexican Hibiscus Flowers</li>
-                <li>Cinnamon</li>
-                <li>Allspice</li>
-                <li>Ginger</li>
-                <li>Cane Sugar</li>
+                <li>Dried hibiscus flowers</li>
+                <li>Rose petals (fairtrade)</li>
+                <li>Pomegranate extract</li>
+                <li>A whisper of cardamom</li>
+                <li>Pure spring water</li>
               </ul>
+
               <div class="accordion">
                 <button class="accordion-toggle" aria-expanded="false" aria-controls="detail-1">
                   Learn more
@@ -130,10 +161,22 @@
               </div>
             </div>
           </article>
+
           <!-- ── Product 2: Rooibos Citrus ── -->
           <article class="product-card product-card--amber reveal" role="listitem" aria-label="Rooibos Citrus Iced Tea">
             <div class="product-visual" aria-hidden="true">
-              <svg class="bottle-svg" viewBox="0 0 100 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <!--
+                BEVERAGE 2 PICTURE — replace src below with your own image path.
+                The image scales responsively inside the card (object-fit: contain).
+                If the file is missing, the SVG bottle illustration is shown as a fallback.
+              -->
+              <img
+                class="product-img"
+                src="INSERT_BEVERAGE_TWO_PICTURE_FILE_HERE"
+                alt="Rooibos Citrus Iced Tea bottle"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+              />
+              <svg class="bottle-svg bottle-svg--fallback" viewBox="0 0 100 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <rect x="38" y="0" width="24" height="10" rx="3" fill="var(--cap-dark)"/>
                 <path d="M38 10 Q35 20 32 35 L68 35 Q65 20 62 10Z" fill="var(--bottle-body)"/>
                 <path d="M28 38 Q22 60 22 100 L22 180 Q22 200 50 200 Q78 200 78 180 L78 100 Q78 60 72 38Z" fill="var(--bottle-body)"/>
@@ -154,15 +197,18 @@
                 <rect x="28" y="90" width="44" height="55" rx="4" fill="var(--label-bg)" opacity="0.15"/>
               </svg>
             </div>
+
             <div class="product-info">
-              <h3 class="product-name">Rooibos Iced Tea</h3>
+              <h3 class="product-name">Rooibos Citrus</h3>
               <span class="product-badge product-badge--amber">Amber–Red</span>
               <ul class="ingredient-list" aria-label="Ingredients">
-                <li>South African Rooibos</li>
-                <li>Fresh Lemon Juice</li>
-                <li>Fresh Rosemary</li>
-                <li>Maltose Syrup</li>
+                <li>South African rooibos (fairtrade)</li>
+                <li>Orange peel (organic)</li>
+                <li>Lemon verbena</li>
+                <li>Ginger root</li>
+                <li>Wildflower honey</li>
               </ul>
+
               <div class="accordion">
                 <button class="accordion-toggle" aria-expanded="false" aria-controls="detail-2">
                   Learn more
@@ -175,9 +221,105 @@
               </div>
             </div>
           </article>
+
+          <!-- ── Product 3: Black Tea Peach ── -->
+          <article class="product-card product-card--peach reveal" role="listitem" aria-label="Black Tea Peach Iced Tea">
+            <div class="product-visual" aria-hidden="true">
+              <svg class="bottle-svg" viewBox="0 0 100 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <rect x="38" y="0" width="24" height="10" rx="3" fill="var(--cap-dark)"/>
+                <path d="M38 10 Q35 20 32 35 L68 35 Q65 20 62 10Z" fill="var(--bottle-body)"/>
+                <path d="M28 38 Q22 60 22 100 L22 180 Q22 200 50 200 Q78 200 78 180 L78 100 Q78 60 72 38Z" fill="var(--bottle-body)"/>
+                <clipPath id="clip-peach">
+                  <path d="M28 38 Q22 60 22 100 L22 180 Q22 200 50 200 Q78 200 78 180 L78 100 Q78 60 72 38Z"/>
+                </clipPath>
+                <rect x="0" y="55" width="100" height="155" fill="var(--tea-peach)" clip-path="url(#clip-peach)" opacity="0.88"/>
+                <path d="M34 55 Q32 80 32 110" stroke="var(--bottle-highlight)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.5"/>
+                <!-- Peach decoration -->
+                <g transform="translate(50,132)" opacity="0.68">
+                  <ellipse cx="0" cy="0" rx="9" ry="10" fill="var(--peach-fill)"/>
+                  <ellipse cx="0" cy="0" rx="9" ry="10" fill="none" stroke="var(--peach-stroke)" stroke-width="0.8"/>
+                  <line x1="0" y1="-10" x2="0" y2="10" stroke="var(--peach-stroke)" stroke-width="0.6"/>
+                  <!-- Leaf -->
+                  <path d="M4-9 C8-14 14-12 12-8 C10-5 6-7 4-9Z" fill="var(--leaf-deco)" stroke="none"/>
+                </g>
+                <rect x="28" y="90" width="44" height="55" rx="4" fill="var(--label-bg)" opacity="0.15"/>
+              </svg>
+            </div>
+
+            <div class="product-info">
+              <h3 class="product-name">Black Tea Peach</h3>
+              <span class="product-badge product-badge--peach">Warm Amber</span>
+              <ul class="ingredient-list" aria-label="Ingredients">
+                <li>First-flush Darjeeling black tea</li>
+                <li>White peach purée (organic)</li>
+                <li>Dried apricot</li>
+                <li>Vanilla pod</li>
+                <li>A touch of cane sugar</li>
+              </ul>
+
+              <div class="accordion">
+                <button class="accordion-toggle" aria-expanded="false" aria-controls="detail-3">
+                  Learn more
+                  <svg class="accordion-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 5l6 6 6-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+                </button>
+                <div class="accordion-body" id="detail-3" hidden>
+                  <p class="tasting-note"><strong>Tasting note:</strong> The muscatel depth of Darjeeling meets ripe summer peach in a long, honeyed finish. Silky, nostalgic, and beautifully balanced between tannic structure and fruit sweetness.</p>
+                  <p class="culture-note"><strong>Origin &amp; craft:</strong> Darjeeling's "first flush" — plucked in spring before the monsoon — is considered among the world's finest teas. We work exclusively with estates enrolled in the Darjeeling Fairtrade certification programme, ensuring fair wages for the workers who make these leaves possible.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Product 4: Green Tea Lemongrass ── -->
+          <article class="product-card product-card--green reveal" role="listitem" aria-label="Green Tea Lemongrass Iced Tea">
+            <div class="product-visual" aria-hidden="true">
+              <svg class="bottle-svg" viewBox="0 0 100 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <rect x="38" y="0" width="24" height="10" rx="3" fill="var(--cap-dark)"/>
+                <path d="M38 10 Q35 20 32 35 L68 35 Q65 20 62 10Z" fill="var(--bottle-body)"/>
+                <path d="M28 38 Q22 60 22 100 L22 180 Q22 200 50 200 Q78 200 78 180 L78 100 Q78 60 72 38Z" fill="var(--bottle-body)"/>
+                <clipPath id="clip-green">
+                  <path d="M28 38 Q22 60 22 100 L22 180 Q22 200 50 200 Q78 200 78 180 L78 100 Q78 60 72 38Z"/>
+                </clipPath>
+                <rect x="0" y="55" width="100" height="155" fill="var(--tea-green-gold)" clip-path="url(#clip-green)" opacity="0.85"/>
+                <path d="M34 55 Q32 80 32 110" stroke="var(--bottle-highlight)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.5"/>
+                <!-- Lemongrass stalk decoration -->
+                <g transform="translate(50,125)" opacity="0.7">
+                  <line x1="0" y1="-18" x2="0" y2="18" stroke="var(--lemongrass-color)" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M0-10 C6-14 10-8 6-4 C3-1 0-3 0-10Z" fill="var(--lemongrass-color)" opacity="0.8"/>
+                  <path d="M0-6 C-6-10 -10-4-6 0 C-3 3 0 1 0-6Z" fill="var(--lemongrass-color)" opacity="0.6"/>
+                </g>
+                <rect x="28" y="90" width="44" height="55" rx="4" fill="var(--label-bg)" opacity="0.15"/>
+              </svg>
+            </div>
+
+            <div class="product-info">
+              <h3 class="product-name">Green Tea Lemongrass</h3>
+              <span class="product-badge product-badge--green">Pale Gold</span>
+              <ul class="ingredient-list" aria-label="Ingredients">
+                <li>Japanese sencha green tea</li>
+                <li>Fresh lemongrass stalks</li>
+                <li>Kaffir lime leaf</li>
+                <li>Cucumber extract</li>
+                <li>Agave nectar (raw, organic)</li>
+              </ul>
+
+              <div class="accordion">
+                <button class="accordion-toggle" aria-expanded="false" aria-controls="detail-4">
+                  Learn more
+                  <svg class="accordion-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 5l6 6 6-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+                </button>
+                <div class="accordion-body" id="detail-4" hidden>
+                  <p class="tasting-note"><strong>Tasting note:</strong> Crisp, verdant, and citrus-luminous. The grassy freshness of sencha opens into aromatic lemongrass, with a cooling cucumber finish that is the very definition of refreshment.</p>
+                  <p class="culture-note"><strong>Origin &amp; craft:</strong> Sencha is Japan's most beloved everyday tea — steeped in a culture where preparation is itself a form of meditation. Our sencha is shade-grown by a third-generation family farm in Shizuoka, harvested by hand in early spring, then immediately steam-fixed to preserve every molecule of green vitality.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
         </div><!-- /.product-grid -->
       </div><!-- /.section-inner -->
     </section>
+
     <!-- ===== CULTURE ===== -->
     <section class="culture" id="culture" aria-labelledby="culture-heading">
       <div class="section-inner">
@@ -186,6 +328,7 @@
           <h2 id="culture-heading" class="section-title">Thousands of years<br/>in every pour</h2>
           <p class="section-sub">Tea is not a commodity. It is an art, a ritual, a conversation between land and person. Nænsomt exists to honour that.</p>
         </header>
+
         <!-- Craft timeline -->
         <ol class="craft-timeline" aria-label="Steps of craft">
           <li class="timeline-step reveal">
@@ -201,6 +344,7 @@
               <p>Every tea begins in soil cared for across generations. We partner only with gardens that practice regenerative agriculture — no synthetic pesticides, no monoculture.</p>
             </div>
           </li>
+
           <li class="timeline-step reveal">
             <div class="timeline-marker" aria-hidden="true">
               <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -221,6 +365,7 @@
               <p>Leaves are dried by sun and low-temperature air — never by industrial heat. This preserves the volatile aromatics that define a tea's character and origin.</p>
             </div>
           </li>
+
           <li class="timeline-step reveal">
             <div class="timeline-marker" aria-hidden="true">
               <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -234,6 +379,7 @@
               <p>We cold-brew for 12–18 hours in mountain spring water. No heat means no bitterness, no degraded antioxidants — only the pure, crystalline character of the leaf.</p>
             </div>
           </li>
+
           <li class="timeline-step reveal">
             <div class="timeline-marker" aria-hidden="true">
               <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -249,6 +395,7 @@
             </div>
           </li>
         </ol>
+
         <!-- Quote -->
         <blockquote class="culture-quote reveal">
           <p>"The best tea is made slowly, tasted quietly, and shared openly."</p>
@@ -256,6 +403,7 @@
         </blockquote>
       </div>
     </section>
+
     <!-- ===== ECOLOGY & FAIRTRADE ===== -->
     <section class="ecology" id="ecology" aria-labelledby="ecology-heading">
       <div class="section-inner">
@@ -264,7 +412,9 @@
           <h2 id="ecology-heading" class="section-title">Good for the leaf.<br/>Good for the world.</h2>
           <p class="section-sub">Premium means nothing if the soil is depleted and the farmers unpaid. We disagree with that version of premium.</p>
         </header>
+
         <div class="ecology-grid" role="list">
+
           <div class="ecology-card reveal" role="listitem">
             <div class="ecology-icon" aria-hidden="true">
               <!-- Fairtrade hands icon -->
@@ -279,6 +429,7 @@
             <h3 class="ecology-title">Fairtrade Certified</h3>
             <p class="ecology-desc">Every ingredient carries Fairtrade certification. Farmers receive fair prices, safe conditions, and community development funds — not as charity, but as justice.</p>
           </div>
+
           <div class="ecology-card reveal" role="listitem">
             <div class="ecology-icon" aria-hidden="true">
               <!-- Recycling / circular icon -->
@@ -293,6 +444,7 @@
             <h3 class="ecology-title">Recyclable Packaging</h3>
             <p class="ecology-desc">100% recycled glass bottles. Labels printed on FSC-certified paper. Cork-composite caps. Our packaging is designed for a second life — every time.</p>
           </div>
+
           <div class="ecology-card reveal" role="listitem">
             <div class="ecology-icon" aria-hidden="true">
               <!-- Low impact / leaf in circle -->
@@ -306,6 +458,7 @@
             <h3 class="ecology-title">Low-Impact Production</h3>
             <p class="ecology-desc">Cold-brew processing uses 60% less energy than hot-fill methods. Our production site runs on 100% renewable electricity and harvests rainwater for cooling.</p>
           </div>
+
           <div class="ecology-card reveal" role="listitem">
             <div class="ecology-icon" aria-hidden="true">
               <!-- Transparency / eye & chain -->
@@ -318,9 +471,11 @@
             <h3 class="ecology-title">Transparent Supply Chain</h3>
             <p class="ecology-desc">We publish annual sourcing reports naming every farm and partner. Every bottle includes a batch code linking to its complete journey — from garden to glass.</p>
           </div>
+
         </div>
       </div>
     </section>
+
     <!-- ===== CONTACT ===== -->
     <section class="contact" id="contact" aria-labelledby="contact-heading">
       <div class="section-inner contact-inner">
@@ -329,36 +484,44 @@
           <h2 id="contact-heading" class="section-title">Let's talk tea</h2>
           <p class="section-sub">Questions about sourcing, wholesale, or just curious about our philosophy? We'd love to hear from you.</p>
         </header>
+
         <form class="contact-form reveal" id="contactForm" novalidate aria-label="Contact form">
           <div class="form-group">
             <label for="name">Your name</label>
             <input type="text" id="name" name="name" autocomplete="name" placeholder="e.g. Anna Lindqvist" required aria-required="true" aria-describedby="name-error"/>
             <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
           </div>
+
           <div class="form-group">
             <label for="email">Email address</label>
             <input type="email" id="email" name="email" autocomplete="email" placeholder="anna@example.com" required aria-required="true" aria-describedby="email-error"/>
             <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
           </div>
+
           <div class="form-group">
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="5" placeholder="Tell us what's on your mind…" required aria-required="true" aria-describedby="message-error"></textarea>
             <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
           </div>
+
           <div class="form-actions">
             <button type="submit" class="btn btn--primary">Send message</button>
           </div>
+
           <div class="form-success" id="formSuccess" role="status" aria-live="polite" hidden>
             <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <p>Thank you — we'll be in touch shortly.</p>
           </div>
         </form>
+
         <p class="contact-mailto reveal">
-          Prefer email directly? <a href="mailto:naensomt@gmail.com" class="mailto-link">naensomt@gmail.com</a>
+          Prefer email directly? <a href="mailto:hej@naensomt.com" class="mailto-link">hej@naensomt.com</a>
         </p>
       </div>
     </section>
+
   </main>
+
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
@@ -375,6 +538,7 @@
       <p class="footer-copy">&copy; <span id="footerYear"></span> Nænsomt. All rights reserved.</p>
     </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
