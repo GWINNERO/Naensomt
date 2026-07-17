@@ -8,11 +8,14 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Skip link for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- ===== HEADER / NAV ===== -->
   <header class="site-header" id="top" role="banner">
     <nav class="nav-inner" aria-label="Main navigation">
       <a href="#top" class="nav-logo" aria-label="Nænsomt – back to top">
-        <img src="images/logo_navn_2.PNG" alt="Nænsomt logo" class="nav-logo-image">
+        <img src="images/logo_navn_2.PNG" alt="Nænsomt" class="nav-logo-image" />
       </a>
       <!-- Hamburger toggle (mobile) -->
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
@@ -29,12 +32,12 @@
       <a href="#products" class="btn btn--nav" aria-label="Shop – scroll to products">Shop</a>
     </nav>
   </header>
+
   <main id="main-content">
     <!-- ===== HERO ===== -->
     <section class="hero" aria-labelledby="hero-headline">
       <div class="hero-texture" aria-hidden="true"></div>
       <div class="hero-botanical" aria-hidden="true">
-        <!-- Botanical leaf SVG silhouettes, purely decorative -->
         <svg class="leaf leaf--l1" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M60 200 C10 160 0 100 20 50 C35 15 60 0 60 0 C60 0 85 15 100 50 C120 100 110 160 60 200Z" fill="currentColor"/>
           <line x1="60" y1="200" x2="60" y2="10" stroke="var(--leaf-vein)" stroke-width="1.2"/>
@@ -66,50 +69,34 @@
           <a href="#culture" class="btn btn--ghost">Our Philosophy</a>
         </div>
       </div>
-      <!-- Scroll indicator -->
       <div class="scroll-indicator" aria-hidden="true">
         <span class="scroll-line"></span>
       </div>
     </section>
+
     <!-- ===== PRODUCTS ===== -->
     <section class="products" id="products" aria-labelledby="products-heading">
       <div class="section-inner">
         <header class="section-header reveal">
           <span class="section-eyebrow">The Collection</span>
-          <h2 id="products-heading" class="section-title">Four teas.<br/>Infinite calm.</h2>
+          <h2 id="products-heading" class="section-title">Two teas.<br/>Infinite calm.</h2>
           <p class="section-sub">Every bottle begins with a question: <em>does this honour the plant?</em></p>
         </header>
+
         <div class="product-grid" role="list">
-          <!-- ── Product 1: Deep Red Hibiscus Rose ── -->
-          <article class="product-card product-card--red reveal" role="listitem" aria-label="Deep Red Hibiscus Rose Iced Tea">
-            <div class="product-visual" aria-hidden="true">
-              <!-- CSS/SVG bottle illustration – deep ruby red -->
-              <svg class="bottle-svg" viewBox="0 0 100 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                <!-- Bottle cap -->
-                <rect x="38" y="0" width="24" height="10" rx="3" fill="var(--cap-dark)"/>
-                <!-- Bottle neck -->
-                <path d="M38 10 Q35 20 32 35 L68 35 Q65 20 62 10Z" fill="var(--bottle-body)"/>
-                <!-- Bottle body -->
-                <path d="M28 38 Q22 60 22 100 L22 180 Q22 200 50 200 Q78 200 78 180 L78 100 Q78 60 72 38Z" fill="var(--bottle-body)"/>
-                <!-- Liquid fill (deep ruby) -->
-                <clipPath id="clip-red">
-                  <path d="M28 38 Q22 60 22 100 L22 180 Q22 200 50 200 Q78 200 78 180 L78 100 Q78 60 72 38Z"/>
-                </clipPath>
-                <rect x="0" y="55" width="100" height="155" fill="var(--tea-red)" clip-path="url(#clip-red)" opacity="0.92"/>
-                <!-- Highlight -->
-                <path d="M34 55 Q32 80 32 110" stroke="var(--bottle-highlight)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.5"/>
-                <!-- Hibiscus flower floating -->
-                <g transform="translate(50,130)" opacity="0.7">
-                  <path d="M0-10 C3-6 8-3 10 0 C8 3 3 6 0 10 C-3 6-8 3-10 0 C-8-3-3-6 0-10Z" fill="var(--petal-red)"/>
-                  <path d="M-7-7 C-4-9 0-10 3-7 C1-3 0 0-3 3 C-6 1-8-2-7-7Z" fill="var(--petal-red)" opacity="0.6"/>
-                  <circle cx="0" cy="0" r="3" fill="var(--petal-center)"/>
-                </g>
-                <!-- Label area -->
-                <rect x="28" y="90" width="44" height="55" rx="4" fill="var(--label-bg)" opacity="0.18"/>
-              </svg>
+          <!-- ── Product 1: Hibiscus Iced Tea ── -->
+          <article class="product-card product-card--red reveal" role="listitem" aria-label="Hibiscus Iced Tea">
+            <div class="product-visual">
+              <img
+                class="product-image"
+                src="images/Hibiscus_iced_tea.PNG"
+                alt="Bottle of Nænsomt Hibiscus Iced Tea"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div class="product-info">
-              <h3 class="product-name">Red Hibiscus Iced Teae</h3>
+              <h3 class="product-name">Hibiscus Iced Tea</h3>
               <span class="product-badge product-badge--red">Deep Red</span>
               <ul class="ingredient-list" aria-label="Ingredients">
                 <li>Mexican Hibiscus Flowers</li>
@@ -124,35 +111,23 @@
                   <svg class="accordion-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 5l6 6 6-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
                 </button>
                 <div class="accordion-body" id="detail-1" hidden>
-                  <p class="tasting-note"><strong>Tasting note:</strong> A deep, vivid tartness softened by the romance of rose. Cooling on the palate, lingering florally. Best served over ice with a sprig of fresh mint.</p>
-                  <p class="culture-note"><strong>Origin &amp; craft:</strong> Hibiscus — <em>karkadé</em> in Egyptian — has been steeped for centuries across West Africa and the Middle East. We source ours from small fairtrade cooperatives in Burkina Faso, where petals are hand-harvested at peak bloom.</p>
+                  <p class="tasting-note"><strong>Tasting note:</strong> A deep, vivid tartness with warming spice. Cooling on the palate, lingering florally. Best served over ice with a sprig of fresh mint.</p>
+                  <p class="culture-note"><strong>Origin &amp; craft:</strong> Hibiscus — <em>karkadé</em> in Egyptian — has been steeped for centuries across West Africa and the Middle East. We source ours from small fairtrade cooperatives, where petals are hand-harvested at peak bloom.</p>
                 </div>
               </div>
             </div>
           </article>
-          <!-- ── Product 2: Rooibos Citrus ── -->
-          <article class="product-card product-card--amber reveal" role="listitem" aria-label="Rooibos Citrus Iced Tea">
-            <div class="product-visual" aria-hidden="true">
-              <svg class="bottle-svg" viewBox="0 0 100 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                <rect x="38" y="0" width="24" height="10" rx="3" fill="var(--cap-dark)"/>
-                <path d="M38 10 Q35 20 32 35 L68 35 Q65 20 62 10Z" fill="var(--bottle-body)"/>
-                <path d="M28 38 Q22 60 22 100 L22 180 Q22 200 50 200 Q78 200 78 180 L78 100 Q78 60 72 38Z" fill="var(--bottle-body)"/>
-                <clipPath id="clip-amber">
-                  <path d="M28 38 Q22 60 22 100 L22 180 Q22 200 50 200 Q78 200 78 180 L78 100 Q78 60 72 38Z"/>
-                </clipPath>
-                <rect x="0" y="55" width="100" height="155" fill="var(--tea-amber-dark)" clip-path="url(#clip-amber)" opacity="0.9"/>
-                <path d="M34 55 Q32 80 32 110" stroke="var(--bottle-highlight)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.45"/>
-                <!-- Orange slice decoration -->
-                <g transform="translate(50,135)" opacity="0.65">
-                  <circle cx="0" cy="0" r="10" fill="var(--citrus-fill)" stroke="var(--citrus-stroke)" stroke-width="1"/>
-                  <line x1="0" y1="-10" x2="0" y2="10" stroke="var(--citrus-stroke)" stroke-width="0.7"/>
-                  <line x1="-10" y1="0" x2="10" y2="0" stroke="var(--citrus-stroke)" stroke-width="0.7"/>
-                  <line x1="-7" y1="-7" x2="7" y2="7" stroke="var(--citrus-stroke)" stroke-width="0.6"/>
-                  <line x1="7" y1="-7" x2="-7" y2="7" stroke="var(--citrus-stroke)" stroke-width="0.6"/>
-                  <circle cx="0" cy="0" r="2.5" fill="var(--citrus-stroke)"/>
-                </g>
-                <rect x="28" y="90" width="44" height="55" rx="4" fill="var(--label-bg)" opacity="0.15"/>
-              </svg>
+
+          <!-- ── Product 2: Rooibos Iced Tea ── -->
+          <article class="product-card product-card--amber reveal" role="listitem" aria-label="Rooibos Iced Tea">
+            <div class="product-visual">
+              <img
+                class="product-image"
+                src="images/Rooibos _iced-tea.PNG"
+                alt="Bottle of Nænsomt Rooibos Iced Tea"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div class="product-info">
               <h3 class="product-name">Rooibos Iced Tea</h3>
@@ -170,14 +145,15 @@
                 </button>
                 <div class="accordion-body" id="detail-2" hidden>
                   <p class="tasting-note"><strong>Tasting note:</strong> Warm, woody, and naturally sweet — rooibos wraps you in comfort while zesty citrus cuts through with brightness. A grounding yet uplifting cup.</p>
-                  <p class="culture-note"><strong>Origin &amp; craft:</strong> Rooibos (<em>Aspalathus linearis</em>) grows only in the Cederberg mountains of South Africa — a plant of extraordinary resilience. Our rooibos is Rainforest Alliance certified and sourced through long-term cooperative partnerships that support local farming families.</p>
+                  <p class="culture-note"><strong>Origin &amp; craft:</strong> Rooibos (<em>Aspalathus linearis</em>) grows only in the Cederberg mountains of South Africa — a plant of extraordinary resilience. Sourced through long-term cooperative partnerships that support local farming families.</p>
                 </div>
               </div>
             </div>
           </article>
-        </div><!-- /.product-grid -->
-      </div><!-- /.section-inner -->
+        </div>
+      </div>
     </section>
+
     <!-- ===== CULTURE ===== -->
     <section class="culture" id="culture" aria-labelledby="culture-heading">
       <div class="section-inner">
@@ -186,12 +162,11 @@
           <h2 id="culture-heading" class="section-title">Thousands of years<br/>in every pour</h2>
           <p class="section-sub">Tea is not a commodity. It is an art, a ritual, a conversation between land and person. Nænsomt exists to honour that.</p>
         </header>
-        <!-- Craft timeline -->
+
         <ol class="craft-timeline" aria-label="Steps of craft">
           <li class="timeline-step reveal">
             <div class="timeline-marker" aria-hidden="true">
               <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <!-- Seed/seed leaf icon -->
                 <path d="M20 34 C12 34 6 28 6 20 C6 12 12 6 20 6 C24 6 20 14 20 20 C20 26 24 34 20 34Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
                 <path d="M20 6 C26 10 30 16 20 20" stroke="currentColor" stroke-width="1.2" fill="none"/>
               </svg>
@@ -204,7 +179,6 @@
           <li class="timeline-step reveal">
             <div class="timeline-marker" aria-hidden="true">
               <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <!-- Sun/drying icon -->
                 <circle cx="20" cy="20" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/>
                 <line x1="20" y1="4" x2="20" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                 <line x1="20" y1="32" x2="20" y2="36" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -224,7 +198,6 @@
           <li class="timeline-step reveal">
             <div class="timeline-marker" aria-hidden="true">
               <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <!-- Water drop / brewing icon -->
                 <path d="M20 8 C20 8 10 20 10 26 C10 31.5 14.5 36 20 36 C25.5 36 30 31.5 30 26 C30 20 20 8 20 8Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
                 <path d="M14 26 C14 29 16.5 31.5 20 31.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/>
               </svg>
@@ -237,7 +210,6 @@
           <li class="timeline-step reveal">
             <div class="timeline-marker" aria-hidden="true">
               <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <!-- Bottle / packaging icon -->
                 <rect x="14" y="2" width="12" height="6" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
                 <path d="M14 8 Q12 14 11 18 L11 34 Q11 38 20 38 Q29 38 29 34 L29 18 Q28 14 26 8Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
                 <line x1="14" y1="22" x2="26" y2="22" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"/>
@@ -249,13 +221,14 @@
             </div>
           </li>
         </ol>
-        <!-- Quote -->
+
         <blockquote class="culture-quote reveal">
           <p>"The best tea is made slowly, tasted quietly, and shared openly."</p>
           <footer>— A principle, not a person</footer>
         </blockquote>
       </div>
     </section>
+
     <!-- ===== ECOLOGY & FAIRTRADE ===== -->
     <section class="ecology" id="ecology" aria-labelledby="ecology-heading">
       <div class="section-inner">
@@ -267,7 +240,6 @@
         <div class="ecology-grid" role="list">
           <div class="ecology-card reveal" role="listitem">
             <div class="ecology-icon" aria-hidden="true">
-              <!-- Fairtrade hands icon -->
               <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M8 28 C8 28 6 24 10 22 C13 20 16 23 16 23 L24 23 C27 23 28 25 28 27 C28 29 26 30 24 30 L18 30" stroke-width="1.8"/>
                 <path d="M16 30 L28 38 C31 40 35 39 36 36 L44 22 C45 20 43 18 41 19 L35 25 L30 20 C28 18 26 18 24 20 L20 24" stroke-width="1.8"/>
@@ -281,7 +253,6 @@
           </div>
           <div class="ecology-card reveal" role="listitem">
             <div class="ecology-icon" aria-hidden="true">
-              <!-- Recycling / circular icon -->
               <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M24 8 L30 14 L24 14" stroke-width="1.8"/>
                 <path d="M24 14 C16 14 10 19.5 10 26.5 C10 32 13.5 36.5 18.5 38.5" stroke-width="1.8"/>
@@ -295,7 +266,6 @@
           </div>
           <div class="ecology-card reveal" role="listitem">
             <div class="ecology-icon" aria-hidden="true">
-              <!-- Low impact / leaf in circle -->
               <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <circle cx="24" cy="24" r="16" stroke-width="1.8"/>
                 <path d="M24 34 C18 34 13 29 13 23 C13 17 18 12 24 12 C24 12 20 18 20 23 C20 28 24 34 24 34Z" stroke-width="1.8"/>
@@ -308,7 +278,6 @@
           </div>
           <div class="ecology-card reveal" role="listitem">
             <div class="ecology-icon" aria-hidden="true">
-              <!-- Transparency / eye & chain -->
               <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M8 24 C8 24 14 14 24 14 C34 14 40 24 40 24 C40 24 34 34 24 34 C14 34 8 24 8 24Z" stroke-width="1.8"/>
                 <circle cx="24" cy="24" r="5" stroke-width="1.8"/>
@@ -321,6 +290,7 @@
         </div>
       </div>
     </section>
+
     <!-- ===== CONTACT ===== -->
     <section class="contact" id="contact" aria-labelledby="contact-heading">
       <div class="section-inner contact-inner">
@@ -329,7 +299,13 @@
           <h2 id="contact-heading" class="section-title">Let's talk tea</h2>
           <p class="section-sub">Questions about sourcing, wholesale, or just curious about our philosophy? We'd love to hear from you.</p>
         </header>
-        <form class="contact-form reveal" id="contactForm" novalidate aria-label="Contact form">
+
+        <p class="form-demo-note reveal">
+          <strong>Note:</strong> this contact form is a front-end demonstration and does not transmit your message. Please write to us directly at
+          <a href="mailto:naensomt@gmail.com" class="mailto-link">naensomt@gmail.com</a>.
+        </p>
+
+        <form class="contact-form reveal" id="contactForm" novalidate aria-label="Contact form (demo — no data is sent)">
           <div class="form-group">
             <label for="name">Your name</label>
             <input type="text" id="name" name="name" autocomplete="name" placeholder="e.g. Anna Lindqvist" required aria-required="true" aria-describedby="name-error"/>
@@ -346,19 +322,21 @@
             <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
           </div>
           <div class="form-actions">
-            <button type="submit" class="btn btn--primary">Send message</button>
+            <button type="submit" class="btn btn--primary">Open in email app</button>
           </div>
           <div class="form-success" id="formSuccess" role="status" aria-live="polite" hidden>
             <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <p>Thank you — we'll be in touch shortly.</p>
+            <p>Your email app should now open with your message. Nothing was sent from this page.</p>
           </div>
         </form>
+
         <p class="contact-mailto reveal">
           Prefer email directly? <a href="mailto:naensomt@gmail.com" class="mailto-link">naensomt@gmail.com</a>
         </p>
       </div>
     </section>
   </main>
+
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
@@ -375,6 +353,7 @@
       <p class="footer-copy">&copy; <span id="footerYear"></span> Nænsomt. All rights reserved.</p>
     </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
